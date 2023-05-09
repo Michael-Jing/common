@@ -710,6 +710,7 @@ message ModelOptimizationPolicy
     //@@            higher optimization levels)
     //@@
     int32 level = 1;
+    bool  disable_cpu_global_jit = 2;
   }
 
   //@@
