@@ -710,10 +710,19 @@ message ModelOptimizationPolicy
     //@@            higher optimization levels)
     //@@
     int32 level = 1;
-    //@@     .. cpp:var:: bool disable_cpu_global_jit
+    //@@    .. cpp:var:: bool disable_cpu_global_jit
     //@@
     //@@
-    bool  disable_cpu_global_jit = 2;
+    bool disable_cpu_global_jit = 2;
+  }
+
+  //@@
+  //@@  .. cpp:var:: message XlaCpu
+  message XlaCpu
+  {
+    //@@    .. cpp:var:: bool disable_cpu_global_jit
+    bool disable_cpu_global_jit = 1;
+    
   }
 
   //@@
@@ -1031,6 +1040,9 @@ message ModelOptimizationPolicy
   //@@     Currently only recognized by TensorRT backend.
   //@@
   bool eager_batching = 8;
+
+  //@@  .. cpp:var:: XlaCpu xla_cpu
+  XlaCpu xla_cpu = 9;
 }
 
 //@@
